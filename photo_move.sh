@@ -28,15 +28,17 @@ DEST_DIR="$2"
 
 for PHOTO in $SRC_DIR/*.jpg
 do
-    # echo "Photo to move: $PHOTO"
-    # TODO: check filename format
+    if [[ ! ${PHOTO%SRC_DIR/} =~ IMG_[0-9]{8}_.* ]]
+    then
+        echo "Skip file: $PHOTO (wrong filename format)"
+        continue
+    fi
     START=${#SRC_DIR}
     ((START += 5))
     DATE_TAG=${PHOTO:$START:8}
-    # echo $DATE_TAG
     PHOTO_FOLDER="$DEST_DIR/$DATE_TAG"
     mkdir -p "$PHOTO_FOLDER"
-    echo "Will move $PHOTO in $PHOTO_FOLDER"
+    echo "Move $PHOTO in $PHOTO_FOLDER"
     mv "$PHOTO" "$PHOTO_FOLDER/"
 done 
 
