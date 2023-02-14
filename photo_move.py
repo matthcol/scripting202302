@@ -30,6 +30,7 @@ for photoPath in srcdirPath.glob('*.jpg'):
     photoFolderPath = destdirPath / dateTag
     photoFolderPath.mkdir(exist_ok=True)
     # print("Move",photoPath, "to", photoFolderPath / photoPath.name)
+    # TODO: check if image is already there (skip or overwrite or rename)
     photoPath.rename(photoFolderPath / photoPath.name)
 
 
