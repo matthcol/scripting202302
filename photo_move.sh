@@ -28,7 +28,7 @@ DEST_DIR="$2"
 
 for PHOTO in $SRC_DIR/*.jpg
 do
-    if [[ ! ${PHOTO%SRC_DIR/} =~ IMG_[0-9]{8}_.* ]]
+    if [[ ! ${PHOTO#$SRC_DIR/} =~ ^IMG_[0-9]{8}_.*$ ]]
     then
         echo "Skip file: $PHOTO (wrong filename format)"
         continue
