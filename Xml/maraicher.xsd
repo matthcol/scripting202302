@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	  
+	  <!-- élément racine pour représenter une liste de produits-->
+	  <xsd:element name="produits" type="tProduits"/>
+
+	  <xsd:complexType name="tProduits">
+		<!-- fruit(s) et legume(s) sans ordre précisé -->
+		<!-- NB: xsd:all avec elements minOccurs=0 maxOccurs=unbounded 
+			possible aussi mais déconseillé, l'usage du all étant plutôt
+			réservé à une liste de fils de car max 1 en ordre qq -->
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+		  <xsd:element name="fruit" type="tFruitLegume"/>
+		  <xsd:element name="legume" type="tFruitLegume"/>
+		</xsd:choice>
+	  </xsd:complexType>
+
+	  <!-- type commun pour les fruits et les légumes-->
+	  <xsd:complexType name="tFruitLegume">
+		<xsd:sequence>
+			<!-- rappel : minOccurs=maxOccurs=1 par défaut -->
+		   <xsd:element name="producteur" type="xsd:string" /> 
+		   <xsd:element name="origine" type="tOrigine" />  
+		   <xsd:element name="qtity" type="xsd:integer" />
+		   <xsd:element name="note" type="xsd:string" minOccurs="0"    />
+		   <xsd:element name="bio" type="tBio" minOccurs="0" >
+		</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="xsd:string" use="required" />
+		<xsd:attribute name="prix" type="xsd:string" use="required" />
+		<xsd:attribute name="calibre" type="tCalibre" use="required" />
+	  </xsd:complexType>
+
+	 <!-- origine contient un texte et un attribut région-->
+		<xsd:complexType name="tOrigine">
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="region" type="xsd:string"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	
+	<!-- solution alternative : origine est une élément mixte: il contient du texte brut et des attributs -->
+	<!--
+	<xsd:complexType name="tOrigine" mixed="true">
+		 <xsd:attribute name="region" type="xsd:string"   />
+	</xsd:complexType>
+	-->
+
+	<!-- type de calibre avec restriction de valeurs énumérées (on peut aussi
+	utiliser une plage de valeur ou une expression régulière-->
+	<xsd:simpleType name="tCalibre">
+		<xsd:restriction base="xsd:integer">
+		  <xsd:enumeration value="1" />
+		  <xsd:enumeration value="2" />
+		   <xsd:enumeration value="3" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- un élément vide est dérivé à partir de anyType en précisant
+	qu'il n'y a ni attributs ni élements fils. On peut aussi utiliser un type 
+	simple en précisant une longueur de 0 -->
+	<xsd:complexType name="tBio">
+		<xsd:complexContent>
+			<xsd:restriction base="xsd:anyType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<!-- forme condensée :
+	<xsd:complexType name="tBio" />
+	-->
+
+</xsd:schema>
+
+

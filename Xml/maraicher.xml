@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<produits>
+<fruit type="clementine" prix="290" calibre="1">
+<producteur>Production Bastia</producteur>
+<origine region="Corse">France</origine>
+<qtity>15</qtity>
+<note>Sans pépins, avec feuilles</note>
+<bio/>
+</fruit>
+<fruit type="pomme" prix="190" calibre="1">
+<producteur>Jardins de Bretagne</producteur>
+<origine region="Bretagne">France</origine>
+<qtity>15</qtity>
+<note>Golden</note>
+<bio/>
+</fruit>
+<legume type="courgette" prix="300" calibre="2">
+<producteur>Madrid Hortelano</producteur>
+<origine>Espagne</origine>
+<qtity>100</qtity>
+<bio/>
+</legume>
+<fruit type="pomme" prix="190" calibre="1">
+<producteur>Jardins de Cergy</producteur>
+<origine region="Ile de France">France</origine>
+<qtity>15</qtity>
+<note>Golden</note>
+<bio/>
+</fruit>
+<legume type="choufleur" prix="090" calibre="2">
+<producteur>Pontivy et Cie</producteur>
+<origine region="Bretagne">France</origine>
+<qtity>100</qtity>
+</legume>
+<legume type="salade" prix="075" calibre="3">
+<producteur>Marius Production</producteur>
+<origine region="Provence">France</origine>
+<qtity>35</qtity>
+<note>Batavia</note>
+</legume>
+<fruit type="melon" prix="150" calibre="1">
+<producteur>Marius Production</producteur>
+<origine region="Provence">France</origine>
+<qtity>50</qtity>
+<note>Melon brodé</note>
+<bio/>
+</fruit>
+</produits>
