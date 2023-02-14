@@ -5,44 +5,44 @@
         <origine region="Corse">France</origine>
         <qtity>15</qtity>
         <note>Sans pépins, avec feuilles</note>
-        <bio />
+        <organic />
     </fruit>
     <fruit type="pomme" prix="190" calibre="1">
         <producteur>Jardins de Bretagne</producteur>
         <origine region="Bretagne">France</origine>
         <qtity>15</qtity>
         <note>Golden</note>
-        <bio />
+        <organic />
     </fruit>
-    <legume type="courgette" prix="300" calibre="2">
+    <vegetable type="courgette" prix="300" calibre="2">
         <producteur>Madrid Hortelano</producteur>
         <origine>Espagne</origine>
         <qtity>100</qtity>
-        <bio />
-    </legume>
+        <organic />
+    </vegetable>
     <fruit type="pomme" prix="190" calibre="1">
         <producteur>Jardins de Cergy</producteur>
         <origine region="Ile de France">France</origine>
         <qtity>15</qtity>
         <note>Golden</note>
-        <bio />
+        <organic />
     </fruit>
-    <legume type="choufleur" prix="090" calibre="2">
+    <vegetable type="choufleur" prix="090" calibre="2">
         <producteur>Pontivy et Cie</producteur>
         <origine region="Bretagne">France</origine>
         <qtity>100</qtity>
-    </legume>
-    <legume type="salade" prix="075" calibre="3">
+    </vegetable>
+    <vegetable type="salade" prix="075" calibre="3">
         <producteur>Marius Production</producteur>
         <origine region="Provence">France</origine>
         <qtity>35</qtity>
         <note>Batavia</note>
-    </legume>
+    </vegetable>
     <fruit type="melon" prix="150" calibre="1">
         <producteur>Marius Production</producteur>
         <origine region="Provence">France</origine>
         <qtity>50</qtity>
         <note>Melon brodé</note>
-        <bio />
+        <organic />
     </fruit>
 </produits>

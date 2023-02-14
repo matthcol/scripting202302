@@ -27,7 +27,7 @@
 		</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="type" type="xsd:string" use="required" />
-		<xsd:attribute name="prix" type="xsd:string" use="required" />
+		<xsd:attribute name="prix" type="xsd:int" use="required" />
 		<xsd:attribute name="calibre" type="tCalibre" use="required" />
 	  </xsd:complexType>
 
@@ -71,5 +71,3 @@
 	-->
 
 </xsd:schema>
-
-
